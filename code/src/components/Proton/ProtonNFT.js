@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import web3 from "web3";
 
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -32,7 +33,7 @@ const ProtonNFT = ({ data }) => {
             {data.description}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {`Price: ${data.salePrice}`}
+            {`Price: ${web3.utils.fromWei(data.salePrice.toString(), "ether")} ETH`}
           </Typography>
         </CardContent>
       </CardActionArea>
